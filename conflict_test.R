@@ -7,7 +7,7 @@ data("mtcars")
 
 # Data manipulation: Add a factor column for cylinders
 mtcars <- mtcars %>%
-  mutate(cyl_factor = factor(cyl, levels = c(4, 6, 8), labels = c("4 Cyl", "6 Cyl", "8 Cyl")))
+  mutate(cyl_factor = factor(cyl, levels = c(1, 2, 3), labels = c("1 Cyl", "2 Cyl", "3 Cyl")))
 
 # Summarize the dataset: Calculate mean MPG by cylinder category
 summary_table <- mtcars %>%
