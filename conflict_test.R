@@ -9,10 +9,10 @@ data("mtcars")
 mtcars <- mtcars %>%
   mutate(cyl_factor = factor(cyl, levels = c(1, 2, 3), labels = c("1 Cyl", "2 Cyl", "3 Cyl")))
 
-# Summarize the dataset: Calculate mean MPG by cylinder category
+# Summarize the dataset: Calculate mean MPG and HP by cylinder category
 summary_table <- mtcars %>%
   group_by(cyl_factor) %>%
-  summarise(mean_mpg = mean(mpg, na.rm = TRUE))
+  summarise(avg_mpg = mean(mpg, na.rm = TRUE), avg_hp = mean(hp, na.rm = TRUE))
 
 print(summary_table)
 
@@ -25,6 +25,6 @@ ggplot(mtcars, aes(y = hp, x = mpg, color = cyl_factor)) +
        color = "Cylinders") +
   theme_minimal()
 
-print("exercise1")
 
+print("exercice8")
 
