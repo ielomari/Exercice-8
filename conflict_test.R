@@ -25,5 +25,6 @@ ggplot(mtcars, aes(y = hp, x = mpg, color = cyl_factor)) +
        color = "Cylinders") +
   theme_minimal()
 
+print("exercise1")
 
 
