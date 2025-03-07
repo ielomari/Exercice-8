@@ -17,10 +17,13 @@ summary_table <- mtcars %>%
 print(summary_table)
 
 # Plot
-ggplot(mtcars, aes(x = hp, y = mpg, color = cyl_factor)) +
-  geom_point(size = 3, alpha = 0.7) +
+ggplot(mtcars, aes(y = hp, x = mpg, color = cyl_factor)) +
+  geom_point(size = 5, alpha = 0.7) +
   labs(title = "MPG vs. Horsepower",
        x = "Horsepower (HP)",
        y = "Miles Per Gallon (MPG)",
        color = "Cylinders") +
   theme_minimal()
+
+
+
