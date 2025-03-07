@@ -7,7 +7,7 @@ data("mtcars")
 
 # Data manipulation: Add a factor column for cylinders
 mtcars <- mtcars %>%
-  mutate(cyl_factor = factor(cyl, levels = c(4, 6, 8), labels = c("4 Cyl", "6 Cyl", "8 Cyl")))
+  mutate(cyl_factor = factor(cyl, levels = c(1, 2, 3), labels = c("1 Cyl", "2 Cyl", "3 Cyl")))
 
 # Summarize the dataset: Calculate mean MPG and HP by cylinder category
 summary_table <- mtcars %>%
@@ -17,10 +17,13 @@ summary_table <- mtcars %>%
 print(summary_table)
 
 # Plot
-ggplot(mtcars, aes(x = hp, y = mpg, color = cyl_factor)) +
-  geom_point(size = 3, alpha = 0.7) +
+ggplot(mtcars, aes(y = hp, x = mpg, color = cyl_factor)) +
+  geom_point(size = 5, alpha = 0.7) +
   labs(title = "MPG vs. Horsepower",
        x = "Horsepower (HP)",
        y = "Miles Per Gallon (MPG)",
        color = "Cylinders") +
   theme_minimal()
+
+
+
